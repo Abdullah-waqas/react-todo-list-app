@@ -1,0 +1,101 @@
+body {
+  font-family: "Teko";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 2em;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+small {
+  opacity: 0.4;
+  margin-top: 20px;
+  display: block;
+}
+
+h1 {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.6);
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 2em;
+  line-height: 1.3em;
+  font-weight: bold;
+  margin-top: 0.67em;
+}
+
+.todo-list {
+  padding-top: 10px;
+  width: 400px;
+}
+
+.todo {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 3px 10px;
+  font-size: 0.7em;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+}
+
+.todo-text {
+  cursor: pointer;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.todo button {
+  color: #f37070;
+  background: transparent;
+}
+
+input {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 7px 10px;
+  font-size: 0.5em;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  color: #000;
+  outline: 0;
+  border: 0;
+  flex: 1;
+}
+
+form {
+  border-top: 1px solid;
+  display: flex;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+form button {
+  color: #2980b9;
+  background: #fff;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 1px solid #ccc;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 0 15px;
+}
