@@ -115,7 +115,7 @@ Issues
 While developing this project, I was initally unable to launch the program because the react-scripts were executing. I was able to use this resource, https://bobbyhadz.com/blog/not-recognized-as-internal-or-external-command-react-scripts, to troubleshoot this issue and proceed with the building the main.tf and .gitlab-ci.yml files to complete the my test design. Nevertheless, poor time management and unforeseen circumstances outside the program distracted me from focusing on this work. 
 
 I also switched to a GitHub repo that required me to install action-runners. I was not able to complete this step so I could not verify if my CICD pipeline was working. 
-
+```
 
 ## Lesson Learned:
 
