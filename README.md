@@ -67,8 +67,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-
-'''
+```
 
 Description
 The ask for this project was to build a simple React to-do program to deploy to an AWS S3m bucket in an AWS-based VPC and public subnet. This was to be accomplised using a CI/CD pipeline that built the REACT application and deployed the application to an S3 bucket. 
