@@ -112,37 +112,7 @@ Complete the .gitlab-ci.yml files
 
 
 Issues
-While developing this project, I was initally unable to launch the program because the react-scripts were not being executing. I was able to use this resource, https://bobbyhadz.com/blog/not-recognized-as-internal-or-external-command-react-scripts, to troubleshoot this issue and proceed with the building the main.tf and .gitlab-ci.yml files to complete the my test design. 
+While developing this project, I was initally unable to launch the program because the react-scripts were executing. I was able to use this resource, https://bobbyhadz.com/blog/not-recognized-as-internal-or-external-command-react-scripts, to troubleshoot this issue and proceed with the building the main.tf and .gitlab-ci.yml files to complete the my test design. Nevertheless, poor time management and unforeseen circumstances outside the program distracted me from focusing on this work. 
 
+I also switched to a GitHub repo that required me to install action-runners. I was not able to complete this step so I could not verify if my CICD pipeline was working. 
 
-there were many small items which required some thought; for example this was the first program I'd written in Go, which obviously required some time to prototype. Most of those issues were relatively quickly worked through and resolved. Two issues in particular required significantly more time, and are detailed below.
-
-Using Terraform to build/deploy a zip archive for the Lambda function
-One of the necessary steps when automating the creation/configuration of the Lambda function was to create a zip archive, which contains the executable code (see Creating Lambda functions defined as .zip archives)
-Originally I'd attempted to create the archive using terraform, as in:
-
-
-Which was odd, since I was under the impression the plan stage didn't actually do anything, and the only way it would have the hash of the zip file was if terraform had created it. Further digging through the documentation turned up that terraform plan was in fact creating the file (when -out was specified), and apply was not, because when terraform gets a plan file it assumes those required files will be provided as well (see Running Terraform in Automation for details)
-
-
-And everything worked as expected. Took entirely too long to figure out.
-
-
-Figuring out the appropriate terraform for the API Gateway configuration
-Part of the intended design for the project associated with this pipeline was, in addition to a Lambda function, having an API Gateway acting as the public face for said function.
-I reviewed and worked through several tutorials which explained how to configure the service using terraform, and was able to get...some of them working. Building the terraform for this represented the single largest block of time in the project, probably half a day of experimentation and research.
-
-
-However, once the service was built any attempt to call the service failed, as did any attempt at testing the service internally (via the management console). It did look like the service was able to communicate with Lambda, but was unable to properly process the response.
-
-A significant amount of googling later, and making small adjustments to the configured service, I was able to determine these also needed to be added:
-
-aws_api_gateway_integration_response
-aws_api_gateway_method_response - set to 200, application/json; Empty
-
-
-As well as adjusting aws_api_gateway_integration -> integration_method -> type from AWS_PROXY to AWS.
-Things were almost working right, but it was also necessary to add the integration response as a dependency to the deployment entry, otherwise terraform would often deploy the gateway before the integration had been set up, requiring an additional manual deployment after terraform had finished executing.
-In retrospect, the terraform documentation was both incredibly useful and incredibly frustrating.
-Useful because eventually, I was able to find everything I needed in the documentation.
-Frustrating because it would often gloss over implementation details, or neglect to mention certain other resources might be needed, or in fact existed in the first place.
