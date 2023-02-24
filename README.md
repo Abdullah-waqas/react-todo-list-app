@@ -116,3 +116,18 @@ While developing this project, I was initally unable to launch the program becau
 
 I also switched to a GitHub repo that required me to install action-runners. I was not able to complete this step so I could not verify if my CICD pipeline was working. 
 
+
+## Lesson Learned:
+
+How do I complete the VPC block if I have a created VPC instance and want to launch an EC2 instance resource into that VPC network?
+
+
+1. Created a Docker image of g-auto software (gradle framework)
+1. created various project `.gitlab-ci.yml` files using GitLab templates for Terraform and Gradle projects
+    1. refactored templates to print out `group`, `project ` and `inline` CICD variables
+1. Created and destroyed AWS infrastructure (EC2, S3, VPC) using terraform 
+1. Created and destroyed AWS infrastructure (EC2, S3, VPC) using the AWS Management Console
+1. Analyzed terraform to build the infrastructure (`main.tf` file)
+    1. uploaded .jar file to S3 buckets
+    1. created and refactored a security group
+    created and refactored an AWS `group` policy
