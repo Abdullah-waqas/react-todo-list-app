@@ -125,9 +125,11 @@ How do I complete the VPC block if I have a created VPC instance and want to lau
 1. Created a Docker image of g-auto software (gradle framework)
 1. created various project `.gitlab-ci.yml` files using GitLab templates for Terraform and Gradle projects
     1. refactored templates to print out `group`, `project ` and `inline` CICD variables
+    1. refactored CICD stages to make them hidden
 1. Created and destroyed AWS infrastructure (EC2, S3, VPC) using terraform 
 1. Created and destroyed AWS infrastructure (EC2, S3, VPC) using the AWS Management Console
 1. Analyzed terraform to build the infrastructure (`main.tf` file)
     1. uploaded .jar file to S3 buckets
     1. created and refactored a security group
     created and refactored an AWS `group` policy
+1. Installed non galvanized-owned GitLab runners to local and git repo.
