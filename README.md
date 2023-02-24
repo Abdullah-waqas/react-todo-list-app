@@ -112,7 +112,10 @@ Complete the .gitlab-ci.yml files
 
 
 Issues
-While developing this project, there were many small items which required some thought; for example this was the first program I'd written in Go, which obviously required some time to prototype. Most of those issues were relatively quickly worked through and resolved. Two issues in particular required significantly more time, and are detailed below.
+While developing this project, I was initally unable to launch the program because the react-scripts were not being executing. I was able to use this resource, https://bobbyhadz.com/blog/not-recognized-as-internal-or-external-command-react-scripts, to troubleshoot this issue and proceed with the building the main.tf and .gitlab-ci.yml files to complete the my test design. 
+
+
+there were many small items which required some thought; for example this was the first program I'd written in Go, which obviously required some time to prototype. Most of those issues were relatively quickly worked through and resolved. Two issues in particular required significantly more time, and are detailed below.
 
 Using Terraform to build/deploy a zip archive for the Lambda function
 One of the necessary steps when automating the creation/configuration of the Lambda function was to create a zip archive, which contains the executable code (see Creating Lambda functions defined as .zip archives)
